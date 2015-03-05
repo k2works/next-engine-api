@@ -77,6 +77,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision "chef_zero" do |chef|
     chef.cookbooks_path = ["./", "./cookbooks", "./site-cookbooks"]
     chef.add_recipe "ruby-env"
+    chef.add_recipe "emacs-env"
     chef.json = {
         "ruby" => {
             "version" => "2.2.1"
